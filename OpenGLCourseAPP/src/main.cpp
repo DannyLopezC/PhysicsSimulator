@@ -209,7 +209,7 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		10.0f);
 
-	//spotLightCount++;
+	spotLightCount++;
 
 	spotLights[1] = SpotLight(1.0f, 1.0f, 1.0f,
 		0.0f, 1.0f,
@@ -218,7 +218,7 @@ int main()
 		1.0f, 0.0f, 0.0f,
 		20.0f);
 
-	//spotLightCount++;
+	spotLightCount++;
 
 	GLuint uniformProjection = 0, uniformModel = 0, uniformView = 0, uniformEyePosition = 0,
 		uniformAmbientIntensity = 0, uniformAmbientColor = 0, uniformDiffuseIntensity = 0, uniformDiffuseDirection = 0,
@@ -294,14 +294,14 @@ int main()
 			meshList[1]->renderMesh();
 
 			glm::mat4 model1(1.0f);
-			model1 = glm::translate(model1, glm::vec3(-3.0f, 2.0f, 0.0f));
+			model1 = glm::translate(model1, glm::vec3(-3.0f, -1.0f, 0.0f));
 			model1 = glm::rotate(model1, -90.0f * toRadians, glm::vec3(1.0f, 0.0f, 0.0f));
 			model1 = glm::scale(model1, glm::vec3(1.0f, 1.0f, 1.0f));
 
 			glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model1));
 
 			shinyMaterial.useMaterial(uniformSpecularIntensity, uniformShininess);
-			//robot.renderModel();
+			robot.renderModel();
 
 			model = glm::mat4(1.0f);
 			model = glm::translate(model, glm::vec3(-3.0f, 2.0f, 0.0f));

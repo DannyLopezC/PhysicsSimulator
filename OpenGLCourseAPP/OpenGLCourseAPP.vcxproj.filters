@@ -1,99 +1,234 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="assets">
+      <UniqueIdentifier>{e320f078-0072-4d55-9787-ce57031315ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    <Filter Include="src">
+      <UniqueIdentifier>{2f39009a-d09c-4abd-b126-1843258ebb62}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    <Filter Include="assets\models">
+      <UniqueIdentifier>{f9edcc12-01e7-46e7-9b90-c0cc913e75be}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Lightning">
-      <UniqueIdentifier>{7106e7ef-db22-45fd-99c2-784df42bdaa5}</UniqueIdentifier>
+    <Filter Include="assets\shaders">
+      <UniqueIdentifier>{48381f19-2f37-4aab-9d45-b1642840ab90}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files\Lightning">
-      <UniqueIdentifier>{50e46221-82a2-48aa-9ec8-66567d0170d4}</UniqueIdentifier>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{a5f1c126-bfa0-457d-a40d-d10ea6add852}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{157dcba5-e19d-434e-90be-686056132412}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Game">
+      <UniqueIdentifier>{aa3e4be3-6f35-442d-b099-08e8f4928924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graphics">
+      <UniqueIdentifier>{f0cdf497-3b5c-4d61-8dd8-845c8f9d73b1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Graphics\Lightning">
+      <UniqueIdentifier>{85742c0e-ade1-405a-9b88-84fdccc7b458}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>Source Files</Filter>
+    <None Include="assets\models\robot.fbx">
+      <Filter>assets\models</Filter>
+    </None>
+    <None Include="assets\models\uh60.mtl">
+      <Filter>assets\models</Filter>
+    </None>
+    <None Include="assets\models\x-wing.mtl">
+      <Filter>assets\models</Filter>
+    </None>
+    <None Include="assets\shaders\shader.frag">
+      <Filter>assets\shaders</Filter>
+    </None>
+    <None Include="assets\shaders\shader.vert">
+      <Filter>assets\shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="assets\models\uh60.obj">
+      <Filter>assets\models</Filter>
+    </Object>
+    <Object Include="assets\models\x-wing.obj">
+      <Filter>assets\models</Filter>
+    </Object>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\BIBBUMP.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\brick.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\dirt.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\ENGINE.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\ENGINE2.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\FRC.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\fuselage.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\land.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\LASER.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Main_Def.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Main_Nor.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Main_Spec.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Minigun_.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Ministan.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\pal.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\panel.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\plain.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\PLATEOX2.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Plt.jpg">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\REFMAP.gif">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Track_Al.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Track_De.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Track_No.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\Track_Sp.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\WINGBACK.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\WINGDOWN.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\WINGFRON.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\WINGTOP.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\XSIDE.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\XWBACK.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\XWDOWN.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\XWTOP.tga">
+      <Filter>assets\textures</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="Mesh.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Core\Window.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Shader.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Lightning\DirectionalLight.cpp">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClCompile>
-    <ClCompile Include="Window.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Lightning\Light.cpp">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClCompile>
-    <ClCompile Include="Camera.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Lightning\PointLight.cpp">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClCompile>
-    <ClCompile Include="Texture.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Lightning\SpotLight.cpp">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClCompile>
-    <ClCompile Include="Material.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Camera.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Light.cpp">
-      <Filter>Source Files\Lightning</Filter>
+    <ClCompile Include="src\Graphics\Material.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="DirectionalLight.cpp">
-      <Filter>Source Files\Lightning</Filter>
+    <ClCompile Include="src\Graphics\Mesh.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="PointLight.cpp">
-      <Filter>Source Files\Lightning</Filter>
+    <ClCompile Include="src\Graphics\Model.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="SpotLight.cpp">
-      <Filter>Source Files\Lightning</Filter>
+    <ClCompile Include="src\Graphics\Shader.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Model.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="src\Graphics\Texture.cpp">
+      <Filter>src\Graphics</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Mesh.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Core\CommonValues.h">
+      <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Shader.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Core\stb_image.h">
+      <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Window.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Core\Window.h">
+      <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Camera.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Graphics\Lightning\DirectionalLight.h">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClInclude>
-    <ClInclude Include="Texture.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Graphics\Lightning\Light.h">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClInclude>
-    <ClInclude Include="Material.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Graphics\Lightning\PointLight.h">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClInclude>
-    <ClInclude Include="Light.h">
-      <Filter>Header Files\Lightning</Filter>
+    <ClInclude Include="src\Graphics\Lightning\SpotLight.h">
+      <Filter>src\Graphics\Lightning</Filter>
     </ClInclude>
-    <ClInclude Include="DirectionalLight.h">
-      <Filter>Header Files\Lightning</Filter>
+    <ClInclude Include="src\Graphics\Camera.h">
+      <Filter>src\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="PointLight.h">
-      <Filter>Header Files\Lightning</Filter>
+    <ClInclude Include="src\Graphics\Material.h">
+      <Filter>src\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="CommonValues.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Graphics\Mesh.h">
+      <Filter>src\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="SpotLight.h">
-      <Filter>Header Files\Lightning</Filter>
+    <ClInclude Include="src\Graphics\Model.h">
+      <Filter>src\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="Model.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="src\Graphics\Shader.h">
+      <Filter>src\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Texture.h">
+      <Filter>src\Graphics</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

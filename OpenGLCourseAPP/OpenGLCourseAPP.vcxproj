@@ -19,32 +19,78 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Camera.cpp" />
-    <ClCompile Include="DirectionalLight.cpp" />
-    <ClCompile Include="Light.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="Material.cpp" />
-    <ClCompile Include="Mesh.cpp" />
-    <ClCompile Include="Model.cpp" />
-    <ClCompile Include="PointLight.cpp" />
-    <ClCompile Include="Shader.cpp" />
-    <ClCompile Include="SpotLight.cpp" />
-    <ClCompile Include="Texture.cpp" />
-    <ClCompile Include="Window.cpp" />
+    <None Include="assets\models\robot.fbx" />
+    <None Include="assets\models\uh60.mtl" />
+    <None Include="assets\models\x-wing.mtl" />
+    <None Include="assets\shaders\shader.frag" />
+    <None Include="assets\shaders\shader.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Camera.h" />
-    <ClInclude Include="CommonValues.h" />
-    <ClInclude Include="DirectionalLight.h" />
-    <ClInclude Include="Light.h" />
-    <ClInclude Include="Material.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Model.h" />
-    <ClInclude Include="PointLight.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="SpotLight.h" />
-    <ClInclude Include="Texture.h" />
-    <ClInclude Include="Window.h" />
+    <Object Include="assets\models\uh60.obj" />
+    <Object Include="assets\models\x-wing.obj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\BIBBUMP.jpg" />
+    <Image Include="assets\textures\brick.png" />
+    <Image Include="assets\textures\dirt.png" />
+    <Image Include="assets\textures\ENGINE.tga" />
+    <Image Include="assets\textures\ENGINE2.tga" />
+    <Image Include="assets\textures\FRC.jpg" />
+    <Image Include="assets\textures\fuselage.jpg" />
+    <Image Include="assets\textures\land.jpg" />
+    <Image Include="assets\textures\LASER.tga" />
+    <Image Include="assets\textures\Main_Def.tga" />
+    <Image Include="assets\textures\Main_Nor.tga" />
+    <Image Include="assets\textures\Main_Spec.tga" />
+    <Image Include="assets\textures\Minigun_.tga" />
+    <Image Include="assets\textures\Ministan.tga" />
+    <Image Include="assets\textures\pal.jpg" />
+    <Image Include="assets\textures\panel.jpg" />
+    <Image Include="assets\textures\plain.png" />
+    <Image Include="assets\textures\PLATEOX2.tga" />
+    <Image Include="assets\textures\Plt.jpg" />
+    <Image Include="assets\textures\REFMAP.gif" />
+    <Image Include="assets\textures\Track_Al.tga" />
+    <Image Include="assets\textures\Track_De.tga" />
+    <Image Include="assets\textures\Track_No.tga" />
+    <Image Include="assets\textures\Track_Sp.tga" />
+    <Image Include="assets\textures\WINGBACK.tga" />
+    <Image Include="assets\textures\WINGDOWN.tga" />
+    <Image Include="assets\textures\WINGFRON.tga" />
+    <Image Include="assets\textures\WINGTOP.tga" />
+    <Image Include="assets\textures\XSIDE.tga" />
+    <Image Include="assets\textures\XWBACK.tga" />
+    <Image Include="assets\textures\XWDOWN.tga" />
+    <Image Include="assets\textures\XWTOP.tga" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\Window.cpp" />
+    <ClCompile Include="src\Graphics\Camera.cpp" />
+    <ClCompile Include="src\Graphics\Lightning\DirectionalLight.cpp" />
+    <ClCompile Include="src\Graphics\Lightning\Light.cpp" />
+    <ClCompile Include="src\Graphics\Lightning\PointLight.cpp" />
+    <ClCompile Include="src\Graphics\Lightning\SpotLight.cpp" />
+    <ClCompile Include="src\Graphics\Material.cpp" />
+    <ClCompile Include="src\Graphics\Mesh.cpp" />
+    <ClCompile Include="src\Graphics\Model.cpp" />
+    <ClCompile Include="src\Graphics\Shader.cpp" />
+    <ClCompile Include="src\Graphics\Texture.cpp" />
+    <ClCompile Include="src\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\CommonValues.h" />
+    <ClInclude Include="src\Core\stb_image.h" />
+    <ClInclude Include="src\Core\Window.h" />
+    <ClInclude Include="src\Graphics\Camera.h" />
+    <ClInclude Include="src\Graphics\Lightning\DirectionalLight.h" />
+    <ClInclude Include="src\Graphics\Lightning\Light.h" />
+    <ClInclude Include="src\Graphics\Lightning\PointLight.h" />
+    <ClInclude Include="src\Graphics\Lightning\SpotLight.h" />
+    <ClInclude Include="src\Graphics\Material.h" />
+    <ClInclude Include="src\Graphics\Mesh.h" />
+    <ClInclude Include="src\Graphics\Model.h" />
+    <ClInclude Include="src\Graphics\Shader.h" />
+    <ClInclude Include="src\Graphics\Texture.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
