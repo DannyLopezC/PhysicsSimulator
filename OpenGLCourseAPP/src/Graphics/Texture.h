@@ -1,6 +1,6 @@
 #pragma once
 #include <GL/glew.h>
-#include "stb_image.h"
+#include "../Core/stb_image.h"
 
 class Texture
 {

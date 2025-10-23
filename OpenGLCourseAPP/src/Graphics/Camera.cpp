@@ -4,7 +4,7 @@
 Camera::Camera()
 {
 	position = glm::vec3(0,0,0);
-	worldUp = glm::vec3(0, 0, 0);
+	worldUp = glm::vec3(0.0f, 1.0f, 0.0f);
 	yaw = 0;
 	pitch = 0;
 	front = glm::vec3(0.0f, 0.0f, -1.0f);
@@ -51,25 +51,22 @@ void Camera::keyControl(bool* keys, GLfloat deltaTime)
 
 void Camera::mouseControl(GLfloat xChange, GLfloat yChange)
 {
-	if (xChange > 100 || yChange > 100) {
-		xChange = 0;
-		yChange = 0;
-	}
+	if (fabs(xChange) > 100.0f || fabs(yChange) > 100.0f)
+		return;
 
+	yaw += xChange * turnSpeed;
+	pitch += yChange * turnSpeed;
 
-	xChange *= turnSpeed;
-	yChange *= turnSpeed;
+	pitch = glm::clamp(pitch, -89.0f, 89.0f);
 
-	yaw += xChange;
-	pitch += yChange;
+	// Smooth
+	static float smoothYaw = yaw;
+	static float smoothPitch = pitch;
+	smoothYaw = glm::mix(smoothYaw, yaw, 0.2f);
+	smoothPitch = glm::mix(smoothPitch, pitch, 0.2f);
 
-	if (pitch > 89.0f){
-		pitch = 89.0f;
-	}
-
-	if (pitch < -89.0f){
-		pitch = -89.0f;
-	}
+	yaw = smoothYaw;
+	pitch = smoothPitch;
 
 	update();
 }

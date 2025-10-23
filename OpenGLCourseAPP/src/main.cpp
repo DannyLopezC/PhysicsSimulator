@@ -12,19 +12,19 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "CommonValues.h"
+#include "Core/CommonValues.h"
 
-#include "Mesh.h"
-#include "Shader.h"
-#include "Window.h"
-#include "Camera.h"
-#include "Texture.h"
-#include "DirectionalLight.h"
-#include "PointLight.h"
-#include "Material.h"
-#include "SpotLight.h"
+#include "Graphics/Mesh.h"
+#include "Graphics/Shader.h"
+#include "Core/Window.h"
+#include "Graphics/Camera.h"
+#include "Graphics/Texture.h"
+#include "Graphics/Lightning/DirectionalLight.h"
+#include "Graphics/Lightning/PointLight.h"
+#include "Graphics/Material.h"
+#include "Graphics/Lightning/SpotLight.h"
 
-#include "Model.h"
+#include "Graphics/Model.h"
 
 const float toRadians = 3.14159265f / 180.0f;
 
@@ -57,10 +57,10 @@ float maxSize = 0.8f;
 float minSize = 0.1f;
 
 // Vertex Shader
-static const char* vShader = "Shaders/shader.vert";
+static const char* vShader = "assets/shaders/shader.vert";
 
 // Fragment Shader
-static const char* fShader = "Shaders/shader.frag";
+static const char* fShader = "assets/shaders/shader.frag";
 
 void calcAverageNormals(unsigned int * indices, unsigned int indiceCount, GLfloat* vertices,
 	unsigned int verticeCount, unsigned int vLength, unsigned int normalOffset) {
@@ -162,20 +162,20 @@ int main()
 
 	camera = Camera(glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0f), -90.0f, 0.0f, 5.0f, 0.5f);
 
-	brickTexture = Texture("Textures/brick.png");
+	brickTexture = Texture("assets/textures/brick.png");
 	brickTexture.loadTextureA();
 	
-	dirtTexture = Texture("Textures/dirt.png");
+	dirtTexture = Texture("assets/textures/dirt.png");
 	dirtTexture.loadTextureA();
 
-	plainTexture = Texture("Textures/plain.png");
+	plainTexture = Texture("assets/textures/plain.png");
 	plainTexture.loadTextureA();
 
 	robot = Model();
-	robot.loadModel("Models/robot.fbx");
+	robot.loadModel("assets/models/robot.fbx");
 
 	blackhawk = Model();
-	blackhawk.loadModel("Models/uh60.obj");
+	blackhawk.loadModel("assets/models/uh60.obj");
 
 	shinyMaterial = Material(0.8f, 256);
 	dullMaterial = Material(0.3f, 4);

@@ -19,49 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\models\robot.fbx" />
-    <None Include="assets\models\uh60.mtl" />
-    <None Include="assets\models\x-wing.mtl" />
     <None Include="assets\shaders\shader.frag" />
     <None Include="assets\shaders\shader.vert" />
-  </ItemGroup>
-  <ItemGroup>
-    <Object Include="assets\models\uh60.obj" />
-    <Object Include="assets\models\x-wing.obj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\BIBBUMP.jpg" />
-    <Image Include="assets\textures\brick.png" />
-    <Image Include="assets\textures\dirt.png" />
-    <Image Include="assets\textures\ENGINE.tga" />
-    <Image Include="assets\textures\ENGINE2.tga" />
-    <Image Include="assets\textures\FRC.jpg" />
-    <Image Include="assets\textures\fuselage.jpg" />
-    <Image Include="assets\textures\land.jpg" />
-    <Image Include="assets\textures\LASER.tga" />
-    <Image Include="assets\textures\Main_Def.tga" />
-    <Image Include="assets\textures\Main_Nor.tga" />
-    <Image Include="assets\textures\Main_Spec.tga" />
-    <Image Include="assets\textures\Minigun_.tga" />
-    <Image Include="assets\textures\Ministan.tga" />
-    <Image Include="assets\textures\pal.jpg" />
-    <Image Include="assets\textures\panel.jpg" />
-    <Image Include="assets\textures\plain.png" />
-    <Image Include="assets\textures\PLATEOX2.tga" />
-    <Image Include="assets\textures\Plt.jpg" />
-    <Image Include="assets\textures\REFMAP.gif" />
-    <Image Include="assets\textures\Track_Al.tga" />
-    <Image Include="assets\textures\Track_De.tga" />
-    <Image Include="assets\textures\Track_No.tga" />
-    <Image Include="assets\textures\Track_Sp.tga" />
-    <Image Include="assets\textures\WINGBACK.tga" />
-    <Image Include="assets\textures\WINGDOWN.tga" />
-    <Image Include="assets\textures\WINGFRON.tga" />
-    <Image Include="assets\textures\WINGTOP.tga" />
-    <Image Include="assets\textures\XSIDE.tga" />
-    <Image Include="assets\textures\XWBACK.tga" />
-    <Image Include="assets\textures\XWDOWN.tga" />
-    <Image Include="assets\textures\XWTOP.tga" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Window.cpp" />
@@ -150,7 +109,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Graphics;$(ProjectDir)src\Graphics\Lightning;$(ProjectDir)assets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -167,7 +126,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Graphics;$(ProjectDir)src\Graphics\Lightning;$(ProjectDir)assets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -184,7 +143,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Graphics;$(ProjectDir)src\Graphics\Lightning;$(ProjectDir)assets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -201,7 +160,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\External Libs\GLEW\include;$(SolutionDir)..\External Libs\GLFW\include;$(SolutionDir)..\External Libs\GLM;$(SolutionDir)..\External Libs\ASSIMP\include;$(ProjectDir)src;$(ProjectDir)src\Core;$(ProjectDir)src\Graphics;$(ProjectDir)src\Graphics\Lightning;$(ProjectDir)assets;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>

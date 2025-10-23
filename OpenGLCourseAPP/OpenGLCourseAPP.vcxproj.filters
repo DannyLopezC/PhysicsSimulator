@@ -30,15 +30,6 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <None Include="assets\models\robot.fbx">
-      <Filter>assets\models</Filter>
-    </None>
-    <None Include="assets\models\uh60.mtl">
-      <Filter>assets\models</Filter>
-    </None>
-    <None Include="assets\models\x-wing.mtl">
-      <Filter>assets\models</Filter>
-    </None>
     <None Include="assets\shaders\shader.frag">
       <Filter>assets\shaders</Filter>
     </None>
@@ -47,115 +38,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Object Include="assets\models\uh60.obj">
-      <Filter>assets\models</Filter>
-    </Object>
-    <Object Include="assets\models\x-wing.obj">
-      <Filter>assets\models</Filter>
-    </Object>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\BIBBUMP.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\brick.png">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\dirt.png">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\ENGINE.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\ENGINE2.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\FRC.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\fuselage.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\land.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\LASER.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Main_Def.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Main_Nor.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Main_Spec.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Minigun_.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Ministan.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\pal.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\panel.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\plain.png">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\PLATEOX2.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Plt.jpg">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\REFMAP.gif">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Track_Al.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Track_De.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Track_No.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\Track_Sp.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\WINGBACK.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\WINGDOWN.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\WINGFRON.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\WINGTOP.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\XSIDE.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\XWBACK.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\XWDOWN.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-    <Image Include="assets\textures\XWTOP.tga">
-      <Filter>assets\textures</Filter>
-    </Image>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="src\main.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\Window.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
@@ -188,6 +70,9 @@
     </ClCompile>
     <ClCompile Include="src\Graphics\Texture.cpp">
       <Filter>src\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\main.cpp">
+      <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -7,10 +7,10 @@
 
 #include <GL/glew.h>
 
-#include "DirectionalLight.h"
-#include "PointLight.h"
-#include "SpotLight.h"
-#include "CommonValues.h"
+#include "Graphics/Lightning/DirectionalLight.h"
+#include "Graphics/Lightning/PointLight.h"
+#include "Graphics/Lightning/SpotLight.h"
+#include "Core/CommonValues.h"
 
 class Shader
 {
