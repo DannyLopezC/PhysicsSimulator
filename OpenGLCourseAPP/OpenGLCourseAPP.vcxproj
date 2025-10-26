@@ -25,7 +25,7 @@
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
     <ClCompile Include="src\Core\Input.cpp" />
-    <ClCompile Include="src\Core\Time.cpp" />
+    <ClCompile Include="src\Core\stb_image.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
     <ClCompile Include="src\Game\Car.cpp" />
     <ClCompile Include="src\Game\Game.cpp" />
@@ -50,7 +50,6 @@
     <ClInclude Include="src\Core\CommonValues.h" />
     <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\stb_image.h" />
-    <ClInclude Include="src\Core\Time.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Game\Car.h" />
     <ClInclude Include="src\Game\Game.h" />

@@ -9,8 +9,10 @@ class Mesh
 public:
 	Mesh();
 
-	void createMesh(GLfloat* vertices, unsigned int *indices, unsigned int numOfVertices, unsigned int numOfIndices);
+	void createMesh(GLfloat* vertices, unsigned int* indices, unsigned int numOfVertices, unsigned int numOfIndices);
 	void renderMesh();
+	void renderLines() const;
+	void renderPoints() const;
 	void clearMesh();
 
 	~Mesh();

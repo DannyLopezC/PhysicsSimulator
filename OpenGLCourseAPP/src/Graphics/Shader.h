@@ -11,6 +11,7 @@
 #include "Graphics/Lightning/PointLight.h"
 #include "Graphics/Lightning/SpotLight.h"
 #include "Core/CommonValues.h"
+#include <glm/gtc/type_ptr.hpp>
 
 class Shader
 {
@@ -38,6 +39,9 @@ public:
 	void setSpotLights(SpotLight* sLight, unsigned int lightCount);
 
 	void useShader();
+	void setMat4(const std::string& name, const glm::mat4& value);
+	void setVec3(const std::string& name, const glm::vec3& value);
+	void setFloat(const std::string& name, float value);
 
 	~Shader();
 

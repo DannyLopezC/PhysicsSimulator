@@ -153,6 +153,33 @@ void Shader::useShader()
 	glUseProgram(shaderId);
 }
 
+void Shader::setMat4(const std::string& name, const glm::mat4& value)
+{
+	GLint location = glGetUniformLocation(shaderId, name.c_str());
+	if (location == -1)
+		std::cerr << "Warning: uniform '" << name << "' not found in shader." << std::endl;
+	else
+		glUniformMatrix4fv(location, 1, GL_FALSE, glm::value_ptr(value));
+}
+
+void Shader::setVec3(const std::string& name, const glm::vec3& value)
+{
+	GLint location = glGetUniformLocation(shaderId, name.c_str());
+	if (location == -1)
+		std::cerr << "Warning: uniform '" << name << "' not found in shader." << std::endl;
+	else
+		glUniform3fv(location, 1, glm::value_ptr(value));
+}
+
+void Shader::setFloat(const std::string& name, float value)
+{
+	GLint location = glGetUniformLocation(shaderId, name.c_str());
+	if (location == -1)
+		std::cerr << "Warning: uniform '" << name << "' not found in shader." << std::endl;
+	else
+		glUniform1f(location, value);
+}
+
 void Shader::clearShader()
 {
 	if (shaderId != 0) {
