@@ -24,7 +24,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Application.cpp" />
-    <ClCompile Include="src\Core\Input.cpp" />
+    <ClCompile Include="src\Core\Button.cpp" />
     <ClCompile Include="src\Core\stb_image.cpp" />
     <ClCompile Include="src\Core\Window.cpp" />
     <ClCompile Include="src\Graphics\Camera.cpp" />
@@ -36,17 +36,17 @@
     <ClCompile Include="src\Graphics\Mesh.cpp" />
     <ClCompile Include="src\Graphics\Model.cpp" />
     <ClCompile Include="src\Graphics\PrimitiveFactory.cpp" />
-    <ClCompile Include="src\Graphics\Renderer.cpp" />
     <ClCompile Include="src\Graphics\Shader.cpp" />
     <ClCompile Include="src\Graphics\Texture.cpp" />
+    <ClCompile Include="src\Graphics\Trail.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\Simulation\Ball.cpp" />
     <ClCompile Include="src\Simulation\Simulation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Core\Application.h" />
+    <ClInclude Include="src\Core\Button.h" />
     <ClInclude Include="src\Core\CommonValues.h" />
-    <ClInclude Include="src\Core\Input.h" />
     <ClInclude Include="src\Core\stb_image.h" />
     <ClInclude Include="src\Core\Window.h" />
     <ClInclude Include="src\Graphics\Camera.h" />
@@ -58,9 +58,9 @@
     <ClInclude Include="src\Graphics\Mesh.h" />
     <ClInclude Include="src\Graphics\Model.h" />
     <ClInclude Include="src\Graphics\PrimitiveFactory.h" />
-    <ClInclude Include="src\Graphics\Renderer.h" />
     <ClInclude Include="src\Graphics\Shader.h" />
     <ClInclude Include="src\Graphics\Texture.h" />
+    <ClInclude Include="src\Graphics\Trail.h" />
     <ClInclude Include="src\Simulation\Ball.h" />
     <ClInclude Include="src\Simulation\Simulation.h" />
   </ItemGroup>

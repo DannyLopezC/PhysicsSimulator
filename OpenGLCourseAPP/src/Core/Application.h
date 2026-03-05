@@ -11,8 +11,11 @@
 #include "Graphics/Lightning/PointLight.h"
 #include "Graphics/Lightning/SpotLight.h"
 #include "Graphics/PrimitiveFactory.h"
+#include "Graphics/Trail.h"
+#include "Button.h"
 
 #include "Simulation/Ball.h"
+#include "Simulation/Simulation.h"
 
 class Application
 {
@@ -31,25 +34,23 @@ private:
     Camera camera;
 
     Texture plainTexture;
+    Texture resetTexture;
     Material shinyMaterial;
     Material dullMaterial;
 
-    Model road;
-    Model car;
-
-    PrimitiveFactory primitiveFactory;
     Mesh* floor;
     Mesh* circle;
+    Mesh* wall;
 
     DirectionalLight mainLight;
-    PointLight pointLights[MAX_POINT_LIGHTS];
-    SpotLight spotLights[MAX_SPOT_LIGHTS];
 
     GLfloat deltaTime;
     GLfloat lastTime;
 
     Ball ball;
-    float gravity = 9.8f;
-    float restitution = 0.8f;
-    float floorY = -7.5f;
+
+    Trail* trail;
+    float trajectoryTimer = 0.0f;
+
+    Button* restartBtn;
 };

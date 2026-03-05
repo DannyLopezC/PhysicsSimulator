@@ -77,12 +77,6 @@
     <ClCompile Include="src\Core\Application.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\Input.cpp">
-      <Filter>src\Core</Filter>
-    </ClCompile>
-    <ClCompile Include="src\Graphics\Renderer.cpp">
-      <Filter>src\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="src\Core\stb_image.cpp">
       <Filter>src\Core</Filter>
     </ClCompile>
@@ -94,6 +88,12 @@
     </ClCompile>
     <ClCompile Include="src\Graphics\PrimitiveFactory.cpp">
       <Filter>src\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics\Trail.cpp">
+      <Filter>src\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Button.cpp">
+      <Filter>src\Core</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,12 +139,6 @@
     <ClInclude Include="src\Core\Application.h">
       <Filter>src\Core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\Input.h">
-      <Filter>src\Core</Filter>
-    </ClInclude>
-    <ClInclude Include="src\Graphics\Renderer.h">
-      <Filter>src\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="src\Simulation\Ball.h">
       <Filter>src\Simulation</Filter>
     </ClInclude>
@@ -153,6 +147,12 @@
     </ClInclude>
     <ClInclude Include="src\Graphics\PrimitiveFactory.h">
       <Filter>src\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics\Trail.h">
+      <Filter>src\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Button.h">
+      <Filter>src\Core</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

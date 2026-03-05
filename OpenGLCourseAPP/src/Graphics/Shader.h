@@ -43,6 +43,8 @@ public:
 	void setVec3(const std::string& name, const glm::vec3& value);
 	void setFloat(const std::string& name, float value);
 
+	GLuint getShaderId() const { return shaderId; }
+
 	~Shader();
 
 private:

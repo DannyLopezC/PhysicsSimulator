@@ -2,10 +2,6 @@
 #include <vector>
 #include <cmath>
 
-PrimitiveFactory::PrimitiveFactory()
-{
-}
-
 Mesh* PrimitiveFactory::createCircle(float radius, int segments)
 {
     if (segments < 3) segments = 3;
@@ -82,6 +78,25 @@ Mesh* PrimitiveFactory::createQuad(float width, float height)
 	return quad;
 }
 
+Mesh* PrimitiveFactory::createUIQuad(float width, float height)
+{
+    float w = width * 0.5f;
+    float h = height * 0.5f;
+
+    unsigned int quadIndices[] = { 0, 2, 1, 1, 2, 3 };
+    GLfloat quadVertices[] = {
+        -w, -h, 0.0f,   0.0f, 1.0f,  0.0f, 0.0f, 1.0f,
+         w, -h, 0.0f,   1.0f, 1.0f,  0.0f, 0.0f, 1.0f,
+        -w,  h, 0.0f,   0.0f, 0.0f,  0.0f, 0.0f, 1.0f,
+         w,  h, 0.0f,   1.0f, 0.0f,  0.0f, 0.0f, 1.0f
+    };
+
+    Mesh* quad = new Mesh();
+    quad->createMesh(quadVertices, quadIndices, 32, 6);
+
+    return quad;
+}
+
 Mesh* PrimitiveFactory::createLine(float lenght)
 {
     float l = lenght * 0.5f;
@@ -96,8 +111,4 @@ Mesh* PrimitiveFactory::createLine(float lenght)
     line->createMesh(lineVertices, lineIndices, 16, 2);
 
     return line;
-}
-
-PrimitiveFactory::~PrimitiveFactory()
-{
 }

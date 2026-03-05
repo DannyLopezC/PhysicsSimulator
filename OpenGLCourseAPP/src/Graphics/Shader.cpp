@@ -147,7 +147,7 @@ void Shader::setSpotLights(SpotLight* sLight, unsigned int lightCount)
 void Shader::useShader()
 {
 	if (shaderId == 0) {
-		printf("Shader id equals 0");
+		printf("Shader id equals 0\n");
 	}
 
 	glUseProgram(shaderId);
