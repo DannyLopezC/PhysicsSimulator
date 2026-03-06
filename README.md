@@ -35,7 +35,7 @@ handling, and UI systems**.
 
 ## 🖼️ Preview
 
-![Simulation](https://github.com/DannyLopezC/Proyecto_PDC/blob/main/example.gif)
+![Simulation](https://github.com/DannyLopezC/OpenGLCourseAPP/blob/main/demo_video.mp4)
 
 ---
 
