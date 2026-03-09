@@ -1,44 +1,92 @@
 #include "Simulation.h"
+#include <iostream>
+#include <cmath>
+#include <algorithm>
 
 Simulation::Simulation()
 {
-	ball = Ball(config.throwerPos, config.v0, 0.2f);
+	//ball = Ball(config.throwerPos, config.v0, 0.2f);
+	rocket = Rocket2D(config.startPos, config.startVel, config.startAcc, config.angle,
+		config.mass, config.thrust, config.burnTime, 0.4f, 0.8f);
 }
 
 void Simulation::update(float dt)
 {
-	ball.setYVel(ball.getVel().y - (config.gravity * dt));
-	ball.setPos(ball.getPos() + ball.getVel() * dt);
+	if (simulationEnded) return;
+	glm::vec2 gravityVec = rocket.getMass() * glm::vec2(0, (-config.gravity));
+	glm::vec2 thrustVec = calcThrustVec();
+	glm::vec2 drag = -config.dragCoefficient * rocket.getVel(); // air resistance
+	glm::vec2 totalForce = thrustVec + gravityVec + drag;
+
+	applyMotion(totalForce/ rocket.getMass(), dt);
+
+	float burnTime = std::max(0.0f, rocket.getBurnTime() - dt);
+	rocket.setBurnTime(burnTime);
 
 	bounceOnFloor();
-	bounceOnWall();
+	//bounceOnWall();
 }
 
 void Simulation::bounceOnFloor()
 {
-	if (ball.getPos().y - ball.getRadius() <= config.floorTopY)
+	if (rocket.getPos().y - (rocket.getHeight() / 2) <= config.floorTopY)
 	{
-		ball.setYPos(config.floorTopY + ball.getRadius());
-		ball.setYVel(-ball.getVel().y * config.restitution);
+		rocket.setYPos(config.floorTopY + rocket.getHeight() / 2);
+		rocket.setYVel(-rocket.getVel().y * config.restitution);
 
-		if (std::abs(ball.getVel().y) < 0.05f) ball.setYVel(0.0f);
-
-		std::cout << ball.getPos().x << std::endl;
+		if (std::abs(rocket.getVel().y) < 0.05f) {
+			rocket.setYVel(0.0f);
+			simulationEnded = true;
+		}
 	}
 }
 
 void Simulation::bounceOnWall()
 {
-	if (ball.getPos().x + ball.getRadius() >= config.wallX) {
-		ball.setXPos(config.wallX - ball.getRadius());
-		ball.setXVel(-ball.getVel().x * config.restitution);
+	if (rocket.getPos().x + (rocket.getWidth()/2) >= config.wallX) {
+		rocket.setXPos(config.wallX - (rocket.getWidth() / 2));
+		rocket.setXVel(-rocket.getVel().x * config.restitution);
 
-		if (std::abs(ball.getVel().x) < 0.05f) ball.setXVel(0.0f);
+		if (std::abs(rocket.getVel().x) < 0.05f) rocket.setXVel(0.0f);
 	}
 }
 
+void Simulation::stopMotionOnFloorImpact()
+{
+	if (rocket.getPos().y - (rocket.getHeight() / 2) <= config.floorTopY)
+	{
+		rocket.setVel(glm::vec2(0, 0));
+		rocket.setAcc(glm::vec2(0, 0));
+
+		std::cout << rocket.getPos().x << std::endl;
+		simulationEnded = true;
+	}
+}
+
+void Simulation::applyMotion(glm::vec2 acc, float dt)
+{
+	rocket.setAcc(acc);
+	rocket.setVel(rocket.getVel() + rocket.getAcc() * dt);
+	rocket.setPos(rocket.getPos() + rocket.getVel() * dt);
+}
+
+glm::vec2 Simulation::calcThrustVec()
+{
+	glm::vec2 thrustVec = { 0, 0 };
+
+	if (rocket.getBurnTime() > 0) {
+		float angleRad = rocket.getAngle() * (config.PI / 180);
+		float x = cos(angleRad);
+		float y = sin(angleRad);
+		thrustVec = rocket.getThrust() * glm::vec2(x, y);
+	}
+
+	return thrustVec;
+}
+
 void Simulation::restart() {
-	ball.restart(config.throwerPos, config.v0);
+	rocket.restart(config.startPos, config.startVel, config.burnTime);
+	simulationEnded = false;
 }
 
 Simulation::~Simulation()

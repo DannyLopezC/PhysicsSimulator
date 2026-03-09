@@ -56,7 +56,7 @@ void Application::Init()
     simulation = Simulation();
 
     floor = PrimitiveFactory::createQuad(40.0f, 2.0f);
-    circle = PrimitiveFactory::createCircle(simulation.getBallRadius(), 50);
+    circle = PrimitiveFactory::createQuad(simulation.getRocketWidth(), simulation.getRocketHeight());
     wall = PrimitiveFactory::createQuad(0.2f, 40.0f);
 
     shinyMaterial = Material(0.8f, 256);
@@ -158,7 +158,7 @@ void Application::Run()
         trajectoryTimer += deltaTime;
         if (trajectoryTimer > 0.01f)
         {
-            trail->addPoint(glm::vec2(simulation.getBallPos().x, simulation.getBallPos().y - simulation.getFloorOffset()));
+            trail->addPoint(glm::vec2(simulation.getRocketPos().x, simulation.getRocketPos().y - simulation.getFloorOffset()));
             trajectoryTimer = 0.0f;
         }
 
@@ -177,7 +177,7 @@ void Application::Run()
         // --- Ball ---
         glm::mat4 model(1.0f);
         
-        glm::vec2 p = simulation.getBallPos();
+        glm::vec2 p = simulation.getRocketPos();
 
         model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(p.x,p.y - simulation.getFloorOffset(), 0.0f));
@@ -200,7 +200,7 @@ void Application::Run()
         glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
         dullMaterial.useMaterial(uniformSpecularIntensity, uniformShininess);
         plainTexture.useTexture();
-        wall->renderMesh();
+        //wall->renderMesh();
 
         // --- UI ---
         glDisable(GL_DEPTH_TEST);
