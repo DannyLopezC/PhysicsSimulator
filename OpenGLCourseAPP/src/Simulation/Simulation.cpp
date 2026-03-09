@@ -75,7 +75,7 @@ glm::vec2 Simulation::calcThrustVec()
 	glm::vec2 thrustVec = { 0, 0 };
 
 	if (rocket.getBurnTime() > 0) {
-		float angleRad = rocket.getAngle() * (config.PI / 180);
+		float angleRad = rocket.getAngle() * (PI / 180);
 		float x = cos(angleRad);
 		float y = sin(angleRad);
 		thrustVec = rocket.getThrust() * glm::vec2(x, y);

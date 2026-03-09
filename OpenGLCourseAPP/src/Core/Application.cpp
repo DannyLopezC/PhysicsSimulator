@@ -7,7 +7,7 @@ Application::Application()
     : deltaTime(0.0f), lastTime(0.0f)
 {
     floor = nullptr;
-    circle = nullptr;
+    rocket = nullptr;
     wall = nullptr;
     trail = nullptr;
     restartBtn = nullptr;
@@ -23,8 +23,8 @@ Application::~Application()
     delete floor;
     floor = nullptr;
 
-    delete circle;
-    circle = nullptr;
+    delete rocket;
+    rocket = nullptr;
 
     delete wall;
     wall = nullptr;
@@ -56,7 +56,7 @@ void Application::Init()
     simulation = Simulation();
 
     floor = PrimitiveFactory::createQuad(40.0f, 2.0f);
-    circle = PrimitiveFactory::createQuad(simulation.getRocketWidth(), simulation.getRocketHeight());
+    rocket = PrimitiveFactory::createQuad(simulation.getRocketWidth(), simulation.getRocketHeight());
     wall = PrimitiveFactory::createQuad(0.2f, 40.0f);
 
     shinyMaterial = Material(0.8f, 256);
@@ -174,17 +174,18 @@ void Application::Run()
         // change back to the normal shader
         shader->useShader();
 
-        // --- Ball ---
+        // --- Rocket ---
         glm::mat4 model(1.0f);
         
         glm::vec2 p = simulation.getRocketPos();
 
         model = glm::mat4(1.0f);
         model = glm::translate(model, glm::vec3(p.x,p.y - simulation.getFloorOffset(), 0.0f));
+        model = glm::rotate(model, glm::radians(simulation.getRocketAngle() + 90), glm::vec3(0.0f, 0.0f, 1.0f));
         glUniformMatrix4fv(uniformModel, 1, GL_FALSE, glm::value_ptr(model));
         shinyMaterial.useMaterial(uniformSpecularIntensity, uniformShininess);
         plainTexture.useTexture();
-        circle->renderMesh();
+        rocket->renderMesh();
 
         // --- Floor ---
         model = glm::mat4(1.0f);

@@ -16,7 +16,6 @@
 #include "Graphics/PrimitiveFactory.h"
 #include "Graphics/Trail.h"
 
-#include "Simulation/Ball.h"
 #include "Simulation/Simulation.h"
 
 
@@ -42,7 +41,7 @@ private:
     Material dullMaterial;
 
     Mesh* floor;
-    Mesh* circle;
+    Mesh* rocket;
     Mesh* wall;
 
     DirectionalLight mainLight;

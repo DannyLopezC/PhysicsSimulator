@@ -34,6 +34,7 @@ private:
 	Rocket2D rocket;
 	SimulationConfig config;
 
+	float PI = 3.14159265358979f;
 	bool simulationEnded = false;
 };
 
