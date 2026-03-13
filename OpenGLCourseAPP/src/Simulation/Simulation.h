@@ -49,6 +49,9 @@ public:
 	float getRestitution() const { return config.restitution; }
 	float getDragCoefficient() const { return config.dragCoefficient; }
 
+	bool getHasBounced() const { return hasBounced; }
+	bool getSimulationEnded() const { return simulationEnded; }
+
 	~Simulation();
 private:
 

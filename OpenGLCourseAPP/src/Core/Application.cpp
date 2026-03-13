@@ -75,6 +75,9 @@ void Application::Init()
     resetTexture = Texture("assets/textures/reset.png");
     resetTexture.loadTextureA();
 
+    inputFieldTexture = Texture("assets/textures/inputfield.png");
+    inputFieldTexture.loadTextureA();
+
     simulation = Simulation();
 
     floor = PrimitiveFactory::createQuad(40.0f, 2.0f);
@@ -102,8 +105,8 @@ void Application::Init()
             field.label = label;
             field.key = key;
 
-            field.inputField = new InputField(60.0f, 40.0f, plainTexture);
-            field.inputField->initTextRenderer(w, h, shaderList[3], fontPath, glm::vec4(0.0f, 0.0f, 0.0f, 1.0f), 4);
+            field.inputField = new InputField(70.0f, 40.0f, plainTexture);
+            field.inputField->initTextRenderer(w, h, shaderList[3], fontPath, glm::vec4(0.0f, 0.0f, 0.0f, 1.0f), 5);
 
             field.inputField->setPos(glm::vec3(x, y, 0.0f));
             field.inputField->setText(getFieldValue(field.key));
@@ -114,16 +117,16 @@ void Application::Init()
     float startX = 170.0f;
     float startY = h - 50.0f;
 
-    float columnSpacing = 220.0f;
+    float columnSpacing = 200.0f;
     float rowSpacing = 60.0f;
 
     std::vector<std::pair<std::string, ConfigKey>> fields =
     {
-        {"Gravity", ConfigKey::Gravity},
-        {"Angle", ConfigKey::Angle},
-        {"Mass", ConfigKey::Mass},
-        {"Thrust", ConfigKey::Thrust},
-        {"Burn Time", ConfigKey::BurnTime},
+        {"Gravity (m/s^2)", ConfigKey::Gravity},
+        {"Angle (Degree)", ConfigKey::Angle},
+        {"Mass (kg)", ConfigKey::Mass},
+        {"Thrust (N)", ConfigKey::Thrust},
+        {"Burn Time (s)", ConfigKey::BurnTime},
         {"Restitution", ConfigKey::Restitution}
     };
 
@@ -314,27 +317,28 @@ void Application::Run()
 
         colorLoc = glGetUniformLocation(lineShader->getShaderId(), "lineColor");
          // --- Vel Arrow ---
-        
-        rA = glm::degrees(atan2(vel.y, vel.x));
-        velArrow->setArrowPos(t);
-        velArrow->setArrowAngle(rA);
-        velArrow->setArrowLength(glm::clamp(glm::length(vel) * 0.4f, 0.0f, 5.0f));
-        glUniform4f(colorLoc, velocityColor.r, velocityColor.g, velocityColor.b, velocityColor.a);
-        velArrow->render(lineModel);
-         // -- Acc Arrow ---
+        if (!simulation.getSimulationEnded()) {
+            rA = glm::degrees(atan2(vel.y, vel.x));
+            velArrow->setArrowPos(t);
+            velArrow->setArrowAngle(rA);
+            velArrow->setArrowLength(glm::clamp(glm::length(vel) * 0.2f, 0.0f, 5.0f));
+            glUniform4f(colorLoc, velocityColor.r, velocityColor.g, velocityColor.b, velocityColor.a);
+            velArrow->render(lineModel);
+             // -- Acc Arrow ---
 
-        float accMag = glm::length(acc);
+            float accMag = glm::length(acc);
 
-        if (accMag > 0.0001f)
-        {
-            float rA = glm::degrees(atan2(acc.y, acc.x));
+            if (accMag > 0.0001f)
+            {
+                float rA = glm::degrees(atan2(acc.y, acc.x));
 
-            accArrow->setArrowPos(t);
-            accArrow->setArrowAngle(rA);
-            accArrow->setArrowLength(accMag * 0.2f);
+                accArrow->setArrowPos(t);
+                accArrow->setArrowAngle(rA);
+                accArrow->setArrowLength(accMag * 0.15f);
 
-            glUniform4f(colorLoc, accelColor.r, accelColor.g, accelColor.b, accelColor.a);
-            accArrow->render(lineModel);
+                glUniform4f(colorLoc, accelColor.r, accelColor.g, accelColor.b, accelColor.a);
+                accArrow->render(lineModel);
+            }
         }
 
         // --- Height Line ---
@@ -391,7 +395,7 @@ void Application::Run()
 
             textRenderer->renderText(
                 field.label,
-                left - 100.0f,
+                left - 120.0f,
                 field.inputField->getPos().y - 8.0f,
                 0.6f,
                 glm::vec3(1.0f, 1.0f, 1.0f)
@@ -406,21 +410,21 @@ void Application::Run()
             glm::vec3(1.0f, 1.0f, 1.0f));
 
         ss << std::fixed << std::setprecision(2) << simulation.getMaxHeight();
-        textRenderer->renderText("Max Height: " + ss.str(),
+        textRenderer->renderText("Max Height: " + ss.str() + " m",
             w - 250.0f, h - 80.0f,
             0.7f,
             glm::vec3(1.0f, 1.0f, 1.0f));
 
         ss = std::stringstream();
         ss << std::fixed << std::setprecision(2) << simulation.getRange();
-        textRenderer->renderText("Range: " + ss.str(),
+        textRenderer->renderText("Range: " + ss.str() + " m",
             w - 250.0f, h - 110.0f,
             0.7f,
             glm::vec3(1.0f, 1.0f, 1.0f));
 
         ss = std::stringstream();
         ss << std::fixed << std::setprecision(2) << simulation.getFlightTime();
-        textRenderer->renderText("Flight Time: " + ss.str(),
+        textRenderer->renderText("Flight Time: " + ss.str() + " s",
             w - 250.0f, h - 140.0f,
             0.7f,
             glm::vec3(1.0f, 1.0f, 1.0f));

@@ -7,7 +7,7 @@ Simulation::Simulation()
 {
 	//ball = Ball(config.throwerPos, config.v0, 0.2f);
 	rocket = Rocket2D(config.startPos, config.startVel, config.startAcc, config.angle,
-		config.mass, config.thrust, config.burnTime, 0.4f, 0.8f);
+		config.mass, config.thrust, config.burnTime, 0.4f, 0.6f);
 
 	maxHeight = 0;
 	range = 0; 
@@ -45,8 +45,8 @@ void Simulation::bounceOnFloor()
 
 		if (std::abs(rocket.getVel().y) < 0.05f) {
 			simulationEnded = true;
-			rocket.setVel(glm::vec2(0, 0));
-			rocket.setAcc(glm::vec2(0, 0));
+			//rocket.setVel(glm::vec2(0, 0));
+			//rocket.setAcc(glm::vec2(0, 0));
 		}
 	}
 }

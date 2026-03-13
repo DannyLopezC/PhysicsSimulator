@@ -81,6 +81,7 @@ void InputField::updateInputFieldState(float mx, float my, bool clicked)
 	if (clicked)
 	{
 		isFocused = inside;
+		if(isFocused) eraseAll = true;
 	}
 
 	if (isFocused)
@@ -136,7 +137,14 @@ void InputField::render(GLuint uniformModel, GLuint colorLoc)
 
 void InputField::writeChar(char c)
 {
-	if (state != FOCUSED || currentText.length() >= maxCharacters) return;
+	if (state != FOCUSED) return;
+	if (eraseAll)
+	{
+		currentText.clear();
+		eraseAll = false;
+	}
+
+	if (currentText.length() >= maxCharacters) return;
 
 	if (c >= 32 && c <= 126)
 	{

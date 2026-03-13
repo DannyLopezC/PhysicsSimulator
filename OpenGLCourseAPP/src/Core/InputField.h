@@ -37,6 +37,7 @@ public:
 	glm::vec3 getRotation() const { return rotation; }
 	float getWidth() const { return width; }
 	float getHeight() const { return height; }
+	glm::vec4 getColor() const { return color; }
 
 	void render(GLuint uniformModel, GLuint colorLoc);
 
@@ -70,6 +71,7 @@ private:
 
 	INPUT_FIELD_STATE state;
 	bool isFocused = false;
+	bool eraseAll = false;
 
 	void writingAnimation();
 

@@ -68,6 +68,7 @@ private:
 
     Texture plainTexture;
     Texture resetTexture;
+    Texture inputFieldTexture;
     Material shinyMaterial;
     Material dullMaterial;
 
